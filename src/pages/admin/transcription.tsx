@@ -83,7 +83,7 @@ const Sources = () => {
     },
   ] satisfies TableStructure<TranscriptionQueueItem>[];
 
-  if (!canAccessTranscription) {
+  if (canAccessTranscription) {
     return (
       <AuthStatus
         title="Unauthorized"

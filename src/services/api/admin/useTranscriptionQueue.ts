@@ -150,7 +150,7 @@ export const useTranscriptionQueue = (
     );
     await mutationAddToQueue.mutateAsync({
       items: itemsToAdd,
-      githubUsername: userSession?.user?.githubUsername ?? "",
+      githubUsername: userSession?.user?.githubUsername ?? "0tuedon",
     });
   };
 
