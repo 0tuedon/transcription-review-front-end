@@ -274,7 +274,7 @@ export const SingleSelectField = ({
   };
   const prevSelectedDataNotInList = () => {
     let newListItems: AutoCompleteData[] = [];
-    if (!editedData.length) return newListItems;
+    if (!editedData?.length) return newListItems;
     const flattenedListData = autoCompleteList.map((item) => item.value);
     const _newLitsItems = editedData.filter(
       (item) => !flattenedListData.includes(item)
