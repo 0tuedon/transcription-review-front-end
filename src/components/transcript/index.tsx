@@ -66,9 +66,9 @@ const getTranscriptMetadata = (content: TranscriptContent) => {
   // eslint-disable-next-line no-unused-vars
   const { body, media, transcript_by, ...metadata } = content;
   const {
-    speakers,
-    categories,
-    tags,
+    speakers = [],
+    categories = [],
+    tags = [],
     title = "",
     loc = "",
     date,
