@@ -73,8 +73,7 @@ const WalletAlert = ({ isOpen, onCancel, refetch, balance }: Props) => {
   const lnAddressCheck = /^[a-z0-9\-_.]+@[a-z0-9\-_.]+/;
 
   // A Regex to check if the lightning invoice is valid
-  const lnInvoiceCheck =
-    /^ln([a-z0-9]+)1[qpzry9x8gf2tvdw0s3jn54khce6mua7l]+[a-z0-9]?$/;
+  const lnInvoiceCheck = /^ln(bc|tb|sb)[0-9]+1[ac-hj-np-z02-9]+$/i;
   const handleClose = () => {
     setError("");
     setInvoiceInput("");
