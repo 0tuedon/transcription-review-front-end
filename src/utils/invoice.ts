@@ -2,6 +2,13 @@ import lightningPayReq from "bolt11";
 
 import { INVOICE_PREFIX } from "@/config/default";
 
+const SIGNET_NETWORK = {
+  bech32: "tbs",
+  pubKeyHash: 0x6f,
+  scriptHash: 0xc4,
+  validWitnessVersions: [0, 1],
+};
+
 export const validateInvoice = (invoice: string) => {
   if (!invoice) {
     return {
@@ -10,7 +17,10 @@ export const validateInvoice = (invoice: string) => {
     };
   }
   try {
-    const decodedInvoice = lightningPayReq.decode(invoice);
+    const network = invoice.toLowerCase().startsWith(INVOICE_PREFIX.signet)
+      ? SIGNET_NETWORK
+      : undefined;
+    const decodedInvoice = lightningPayReq.decode(invoice, network);
     if (!decodedInvoice) {
       return {
         success: false,
