@@ -22,7 +22,7 @@ export const FilterQueryNames = {
 
 export const INVOICE_PREFIX = {
   mainnet: "lnbc",
-  signet: "lnbs",
+  signet: "lntbs",
 } as const;
 
 export const ReviewStatus = {
